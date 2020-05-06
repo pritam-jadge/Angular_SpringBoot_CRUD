@@ -1,0 +1,25 @@
+<div style="padding: 10px; margin: auto; width: 40%;">
+    <form [formGroup] ="employeeForm" [hidden] = "!showHide" class="form-horizontal" (ngSubmit) = "onSubmit()">
+        <h3 class="text-center">Employee Details</h3>
+        <hr>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Name :</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" formControlName="name">
+            </div><br><br>
+            <div class="col-md-3">
+                <label>Email :</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" formControlName="email">
+            </div><br><br>
+        </div>
+        <input type="submit" value="submit" class="btn btn-success" style="float: right">
+    </form>
+    <div class="tex-center" [hidden] = "showHide" (click) ="showForm_addMore()">
+        <button class="btn btn-lg btn-info">Add More Records</button>
+    </div>
+    
+</div>  
