@@ -38,25 +38,27 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return status;
 	}
 
 	@Override
 	public List<Employee> showEmployee() {
-		
+
 		Session session  = sessionFactory.openSession();
 		session.getSessionFactory();
 		session.beginTransaction();
 		Query query = session.createQuery("from Employee");
 		@SuppressWarnings("unchecked")
 		List<Employee> list = query.list();
+		session.getTransaction().commit();
+		session.close();
 		return list;
 	}
 
 	@Override
 	public boolean deleteEmployee(Integer id) {
-		
+
 		Session session  = sessionFactory.openSession();
 		session.getSessionFactory();
 		session.beginTransaction();
@@ -67,10 +69,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		session.close();
 		return true;
 	}
-	
+
 	@Override
 	public Employee getEmployeeById(int id) {
-	
+
 		Session session = sessionFactory.openSession();
 		session.getSessionFactory();
 		session.beginTransaction();
@@ -79,7 +81,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public boolean updateEmployee(int id, Employee employee) {
-		
+
 		try {
 			Session session = sessionFactory.openSession();
 			session.getSessionFactory();
@@ -96,7 +98,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return true;
 	}
 }
