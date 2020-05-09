@@ -27,7 +27,6 @@ public class Employee {
 	
 	
 	public Employee() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Employee(Integer id, String name, String email) {
