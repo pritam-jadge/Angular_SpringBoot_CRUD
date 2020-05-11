@@ -11,21 +11,20 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name ="employee")
+@Table(name = "employee")
 public class Employee {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "emp_id")
-	private Integer id;	
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "email")
 	private String email;
-	
-	
+
 	public Employee() {
 	}
 
@@ -58,5 +57,5 @@ public class Employee {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}		
+	}
 }
